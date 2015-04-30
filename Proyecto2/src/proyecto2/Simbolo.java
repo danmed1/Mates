@@ -15,6 +15,7 @@ public class Simbolo {
     
     private char caracter;
     private ArrayList<String> produccion;
+    
     public Simbolo(char caracter) {
         this.caracter = caracter;
         this.produccion = new ArrayList<>();

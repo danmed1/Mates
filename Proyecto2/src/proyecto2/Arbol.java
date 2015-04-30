@@ -46,45 +46,6 @@ public class Arbol {
         noTerminales.put(str, s);
     }
 
-    public void print(int num) {
-        /*System.out.println("[" + inicial + "]");
-         //int spaces = 1;
-
-         ArrayList<String> current = new ArrayList<>();
-         ArrayList<String> toAdd = new ArrayList<>();
-         current.addAll(inicial.getProduccion());
-
-         while (num >= 0) {
-         String s=" ";
-         for (String tem : current) {
-         ArrayList<String> res = analize(tem);
-         System.out.println(s+"["+tem+"]");
-         if (res != null) {
-         String h=s+" ";
-         for (String aux : res) {
-         System.out.println(h+"["+ aux +"]");
-         if(getLeftNoTerminal(aux)!=-1) 
-         toAdd.add(aux);
-         }
-         }
-
-         }
-         s+=" ";
-         current.clear();
-         current.addAll(toAdd);
-         toAdd.clear();
-         num--;
-         }
-         /*for(String tem : current){
-         System.out.println("[" +tem+"]");
-         int red = num;
-         while(red>0){
-                
-         red--;
-         }
-         }*/
-    }
-
     private ArrayList<NodoArbol> generaHijos(NodoArbol nodo) {
         String str = nodo.getContenido();
         int index = getLeftNoTerminal(str);
@@ -136,7 +97,7 @@ public class Arbol {
         }
         return ret;
     }
-    public String print2 (){
+    public String print (){
         return treeString(raiz, 4);
     }
     

@@ -32,8 +32,8 @@ public class Proyecto2 {
         tree.addNoTerminal(sa.toString(), sa);
         tree.addNoTerminal(sb.toString(), sb);
         
-        System.out.println(tree.analize("bbb", 4));
-        System.out.println(tree.print2());
+        System.out.println(tree.analize("bbb", 8));
+        System.out.println(tree.print());
         // TODO code application logic here
     }
     
