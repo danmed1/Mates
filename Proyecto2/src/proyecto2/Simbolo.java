@@ -41,6 +41,23 @@ public class Simbolo {
     public String toString() {
         return caracter + " -> " + produccion;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Simbolo other = (Simbolo) obj;
+        if (this.caracter != other.caracter) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
     public void insertProduction(String str){
         if(!produccion.contains(str)){

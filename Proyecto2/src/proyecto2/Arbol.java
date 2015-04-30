@@ -28,7 +28,7 @@ public class Arbol {
 
     public HashMap<String, Simbolo> getNoTerminales() {
         return noTerminales;
-    }    
+    }
 
     private ArrayList<NodoArbol> generaHijos(NodoArbol nodo) {
         String str = nodo.getContenido();

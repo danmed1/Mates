@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +25,7 @@ public class Proyecto2 {
      */
     public static void main(String[] args) {
 
-        File list = new File("prueba.txt");
+        File list = new File("gramatica.txt");
         try {
             FileReader fileReader = new FileReader(list);
             BufferedReader reader = new BufferedReader(fileReader);
@@ -58,30 +58,22 @@ public class Proyecto2 {
             //Llena la gramatica
             while ((line = reader.readLine()) != null) {
                 String[] produccion = line.split("->");
-
-                gramatica.get(gramatica.indexOf(produccion[0])).getProduccion().add(produccion[1]);
-            }
-
-            Simbolo in = new Simbolo('S');
-            in.insertProduction("aA");
-            in.insertProduction("bB");
-            Simbolo sa = new Simbolo('A');
-            sa.insertProduction("a");
-            Simbolo sb = new Simbolo('B');
-            sb.insertProduction("b");
-            sb.insertProduction("bB");
-
-            tree.addNoTerminal(in.toString(), in);
-            tree.addNoTerminal(sa.toString(), sa);
-            tree.addNoTerminal(sb.toString(), sb);
+                int index = gramatica.indexOf(new Simbolo(produccion[0].charAt(0)));
+                gramatica.get(index).getProduccion().add(produccion[1]);
+            }            
 
             System.out.println("Gramatica");
             for (Simbolo aux : tree.getNoTerminales().values()) {
                 System.out.println(aux);
             }
-            System.out.println("Gramatica");
-            System.out.println(tree.print());
-
+            System.out.println("\nArbol");
+            String input = JOptionPane.showInputDialog("Escriba la cadena que desea ingresar");
+            int profundidad = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nivel de profundidad del arbol"));
+            if(tree.analize(input, profundidad)){
+                System.out.println(tree.print());
+            }else{
+                System.out.println("No se encontró una solución para la cadena");
+            }           
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
