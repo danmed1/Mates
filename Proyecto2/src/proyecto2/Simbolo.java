@@ -35,11 +35,11 @@ public class Simbolo {
 
     public void setProduccion(ArrayList<String> produccion) {
         this.produccion = produccion;
-    }
-    
+    }    
+
     @Override
     public String toString() {
-        return caracter + "";
+        return caracter + " -> " + produccion;
     }
     
     public void insertProduction(String str){
