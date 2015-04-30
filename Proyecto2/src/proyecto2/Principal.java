@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Dan
  */
-public class Proyecto2 {
+public class Principal {
 
     private static ArrayList<Simbolo> terminales = new ArrayList<>();
 
