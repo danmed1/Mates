@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto2;
 
 import java.io.BufferedReader;
@@ -13,15 +9,23 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Dan
- */
+* <h1>Generador de una gramatica.</h1>
+* El programa Principal apartir de un documento genera la gramatica buscando una cadena
+* de caracteres ingresada y en una altura igualmente establecida por el usuario.
+
+* @author  Luis Daniel Medina Lugo
+* @author  Alejandro Ulacia Flores
+* @version 1.0
+* @since   2015-04-30 
+*/
 public class Principal {
 
     private static ArrayList<Simbolo> terminales = new ArrayList<>();
 
     /**
-     * @param args the command line arguments
+     * Este es el metodo main que apartir de un archivo lee y contruye la gramatica
+     * y realiza su árbol de derivaciones
+     * @param args Unused
      */
     public static void main(String[] args) {
 
@@ -66,9 +70,9 @@ public class Principal {
             for (Simbolo aux : tree.getNoTerminales().values()) {
                 System.out.println(aux);
             }
-            System.out.println("\nArbol");
-            String input = JOptionPane.showInputDialog("Escriba la cadena que desea ingresar");
-            int profundidad = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nivel de profundidad del arbol"));
+            System.out.println("\nÁrbol");
+            String input = JOptionPane.showInputDialog("Escriba la cadena que desea comprobar");
+            int profundidad = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nivel de profundidad del árbol"));
             if(tree.analize(input, profundidad)){
                 System.out.println(tree.print());
             }else{
